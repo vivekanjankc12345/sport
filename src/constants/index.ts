@@ -9,7 +9,14 @@ export const API_CONFIG = {
 } as const;
 
 // FAQ Data
-export const FAQ_ITEMS = [
+export type FAQItem = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  content: string;
+};
+
+export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-1",
     title: "FAQ",
@@ -26,7 +33,8 @@ export const FAQ_ITEMS = [
     title: "Contact Helpdesk",
     content: "Get in touch with our support team for immediate assistance.",
   },
-] as const;
+];
+
 
 // Navigation Links
 export const NAV_LINKS = [
