@@ -34,17 +34,15 @@ export default function LeadForm() {
     },
     leadFormSchema
   );
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // ✅ Run Yup validation FIRST
     const isValid = await validateForm();
-    if (!isValid) {
-      setToastMessage("Please fix the errors in the form");
-      setToastType("error");
-      setShowToast(true);
-      return;
-    }
+
+    // ✅ If form is invalid, STOP here
+    // Errors will show below inputs (not in toast)
+    if (!isValid) return;
 
     try {
       setLoading(true);
@@ -57,13 +55,17 @@ export default function LeadForm() {
         setShowToast(true);
         resetForm();
       } else {
-        setToastMessage(response.message || "Failed to submit form. Please try again.");
+        setToastMessage(
+          response.message || "Failed to submit form. Please try again."
+        );
         setToastType("error");
         setShowToast(true);
       }
     } catch (error) {
       console.error("Form submission error:", error);
+
       const errorMessage = getErrorMessage(error);
+
       setToastMessage(
         errorMessage.includes("fetch")
           ? "Connection error. Please make sure the server is running"
@@ -123,7 +125,7 @@ export default function LeadForm() {
                 value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={touched.name ? errors.name : undefined}
+                error={errors.name}
               />
 
               <Input
@@ -133,7 +135,7 @@ export default function LeadForm() {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={touched.email ? errors.email : undefined}
+                error={errors.email}
               />
 
               <Input
@@ -143,7 +145,7 @@ export default function LeadForm() {
                 value={values.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={touched.phone ? errors.phone : undefined}
+                error={errors.phone}
               />
 
               <Textarea
@@ -153,7 +155,7 @@ export default function LeadForm() {
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={touched.message ? errors.message : undefined}
+                error={errors.message}
               />
 
               <Button
@@ -169,6 +171,7 @@ export default function LeadForm() {
         </div>
       </section>
 
+      {/* TOAST (only for success + API errors) */}
       <Toast
         message={toastMessage}
         type={toastType}

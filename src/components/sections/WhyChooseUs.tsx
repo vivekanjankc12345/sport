@@ -23,14 +23,7 @@ export default function WhyChooseUs() {
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((item, index) => (
             <AnimatedSection key={item.id} delay={index * 100}>
-              <div
-                className="
-                  bg-white rounded-xl shadow-md p-8 
-                  hover:shadow-xl hover:scale-105 hover:border-orange-500
-                  border border-transparent
-                  transition-all duration-300 cursor-pointer
-                "
-              >
+              <div className="bg-white rounded-xl shadow-md p-8 hover:shadow-xl hover:scale-105 hover:border-orange-500 border border-transparent transition-all duration-300 cursor-pointer">
                 <div className="text-4xl font-bold text-orange-500 mb-2">
                   {item.value}
                 </div>

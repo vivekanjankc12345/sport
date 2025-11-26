@@ -24,13 +24,7 @@ export default function TopPackages() {
         {packagesData?.map((p) => (
           <article
             key={p.id}
-            className="
-              bg-white rounded-lg shadow-sm overflow-hidden 
-              border border-slate-100 
-              hover:shadow-xl hover:scale-105 hover:border-orange-500
-              transition-all duration-300 cursor-pointer
-              group
-            "
+            className="bg-white rounded-lg shadow-sm overflow-hidden border border-slate-100 hover:shadow-xl hover:scale-105 hover:border-orange-500 transition-all duration-300 cursor-pointer group"
           >
             {/* Image */}
             <div className="relative w-full h-48 overflow-hidden">
@@ -53,12 +47,7 @@ export default function TopPackages() {
               </p>
 
               {/* CTA BUTTON */}
-              <button className="
-                w-full mt-2 bg-black text-white py-2 rounded-md 
-                text-sm font-medium 
-                hover:bg-orange-500 hover:scale-105
-                transition-all duration-300
-              ">
+              <button className="w-full mt-2 bg-black text-white py-2 rounded-md text-sm font-medium hover:bg-orange-500 hover:scale-105 transition-all duration-300">
                 Book Now
               </button>
             </div>

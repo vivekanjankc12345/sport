@@ -28,10 +28,7 @@ export default function Hero() {
 
           {/* HERO CONTENT */}
           <div className="relative z-20 text-center px-6">
-            <h1
-              className="text-white font-extrabold leading-tight text-balance
-                           text-3xl sm:text-4xl md:text-5xl xl:text-6xl max-w-4xl mx-auto"
-            >
+            <h1 className="text-white font-extrabold leading-tight text-balance text-3xl sm:text-4xl md:text-5xl xl:text-6xl max-w-4xl mx-auto">
               SPORTS TRAVEL <br />
               PACKAGES FOR <br />
               GLOBAL EVENTS
@@ -56,16 +53,10 @@ export default function Hero() {
         </div>
       </section>
 
-      <div className="relative w-full h-32 md:h-40"></div>
+      <div className="relative w-full h-16 sm:h-24 md:h-40"></div>
 
-      <div className="relative -mt-24 md:-mt-48 mb-16 md:mb-24 px-4 md:px-0 z-30 flex justify-center">
-        <div
-          className="
-            relative rounded-3xl shadow-2xl overflow-hidden
-            border border-white/10
-            w-full md:w-4xl h-64 sm:h-72 md:h-80
-          "
-        >
+      <div className="relative -mt-20 sm:-mt-32 md:-mt-48 mb-16 md:mb-24 px-4 md:px-0 z-30 flex justify-center">
+        <div className="relative rounded-3xl shadow-2xl overflow-hidden border border-white/10 w-full md:w-4xl h-64 sm:h-72 md:h-80">
           {/* F1 Background Image */}
           <Image
             src="/japan.webp"

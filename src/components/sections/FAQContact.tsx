@@ -36,27 +36,14 @@ export default function FAQContact() {
             {FAQ_ITEMS.map((item, index) => (
               <div
                 key={index}
-                className="
-                  bg-white rounded-xl shadow-sm border border-gray-200
-                  overflow-hidden transition-all duration-300
-                  hover:shadow-md hover:border-orange-200
-                "
+                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-orange-200"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="
-                    w-full flex items-center justify-between
-                    p-5 md:p-6 text-left
-                    hover:bg-gray-50 transition-colors
-                    group
-                  "
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors group"
                 >
                   <div className="flex items-start gap-4 flex-1">
-                    <div className="
-                      flex-shrink-0 w-10 h-10 rounded-full
-                      bg-orange-100 flex items-center justify-center
-                      group-hover:bg-orange-200 transition-colors
-                    ">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
                       {index === 0 ? (
                         <HelpCircle size={20} className="text-orange-500" />
                       ) : index === 1 ? (
@@ -78,12 +65,7 @@ export default function FAQContact() {
                   </div>
                   <ChevronRight
                     size={20}
-                    className={`
-                      text-gray-400 flex-shrink-0 ml-4
-                      transition-transform duration-300
-                      ${openIndex === index ? "rotate-90" : ""}
-                      group-hover:text-orange-500
-                    `}
+                    className={`text-gray-400 flex-shrink-0 ml-4 transition-transform duration-300 ${openIndex === index ? "rotate-90" : ""} group-hover:text-orange-500`}
                   />
                 </button>
 

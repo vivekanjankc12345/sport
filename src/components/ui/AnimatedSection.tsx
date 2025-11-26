@@ -16,17 +16,12 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   const { elementRef, isVisible } = useScrollAnimation({ triggerOnce: true });
 
+  const visibilityClass = isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8";
+
   return (
     <div
       ref={elementRef}
-      className={`
-        transition-all duration-700 ease-out
-        ${isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-8"
-        }
-        ${className}
-      `}
+      className={`transition-all duration-700 ease-out ${visibilityClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

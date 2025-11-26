@@ -23,12 +23,7 @@ export default function FeaturedEvent() {
 
         {/* Main featured card */}
         <AnimatedSection delay={100}>
-          <div className="
-            grid md:grid-cols-2 gap-10 items-center 
-            bg-gray-50 rounded-2xl shadow-lg overflow-hidden
-            hover:shadow-xl transition-all duration-300
-            group
-          ">
+          <div className="grid md:grid-cols-2 gap-10 items-center bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
           {/* Image */}
           <div className="relative h-[300px] md:h-full overflow-hidden">
             <Image
